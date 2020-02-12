@@ -5,11 +5,11 @@ from pydub import AudioSegment
 from pydub.playback import play
 
 
-teamsound = glob.glob("/home/pi/team_?.*")
+ts = glob.glob("/home/pi/team_?.*")
 
 # Create a TCP/IP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-teamsound = AudioSegment.from_file(teamsound[0])
+teamsound = AudioSegment.from_file(ts[0])
 
 # Bind the socket to the port
 server_address = ('0.0.0.0', 1338)
